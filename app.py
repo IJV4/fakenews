@@ -16,6 +16,7 @@ with open('vectorizer.pkl', 'rb') as file:
 
 nltk.download('stopwords')
 nltk.download('punkt')
+nltk.download('wordnet')
 
 # Define the Streamlit app
 def main():
