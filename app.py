@@ -18,21 +18,35 @@ nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
 
+tab1, tab2, tab3 = st.tabs(["Classify", "Data analysis", "Accuracy of the model"])
+
 # Define the Streamlit app
 def main():
-    st.title("Fake News Classifier")
-    st.write("Enter a news article to classify if it's fake or genuine.")
+    with tab3:
+        st.title("Accuracy of the model")
+        st.text("The model has an accuracy of 95.96%")
+        st.image("confusion_matrix.png")
 
-    # Get user input
-    article = st.text_area("Enter the news article", "")
+    with tab2:
+        st.title("Fake News Data Vistualization")  
+        st.image("fake_genuine_distribution.png", caption="Fake vs Genuine")
+        st.image("fake_used_words.png", caption="Fake news most used words")
+        st.image("genuine_used_words.png", caption="Genuine news most used words")
 
-    # Classify the article
-    if st.button("Classify"):
-        if article:
-            prediction = predict_fake_news(article)
-            st.write(f"The article is {prediction}")
-        else:
-            st.write("Please enter a news article.")
+    with tab1:
+        st.title("Fake News Classifier")
+        st.subheader("by Ismael Julian Vila")
+
+        # Get user input
+        article = st.text_area("Enter the news article", "")
+
+        # Classify the article
+        if st.button("Classify"):
+            if article:
+                prediction = predict_fake_news(article)   
+                st.write(f"The article is {prediction}")
+            else:
+                st.write("Please enter a news article.")
 
 def predict_fake_news(article):
     # Clean the user input
