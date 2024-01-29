@@ -1,6 +1,9 @@
-# Project Name
+# Fake News Detector
 
 Fake news detection using machine learning.
+
+Online version of this project at:
+https://fakenews-ijv.streamlit.app/
 
 ## Table of Contents
 
@@ -46,7 +49,7 @@ pip install streamlit
 
 ## Usage
 
-Download the data from https://www.kaggle.com/datasets/bhavikjikadara/fake-news-detection/data?select=fake.csv
+Download the data from https://www.kaggle.com/datasets/bhavikjikadara/fake-news-detection/data
 
 To run the project, open the jupyter notebook "FakeNewsPredictor" and run the cells.
 
